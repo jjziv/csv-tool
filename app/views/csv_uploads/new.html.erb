@@ -1,0 +1,15 @@
+<%= turbo_frame_tag "csv_upload_form" do %>
+  <div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="card p-4 shadow">
+      <h1 class="text-center">Upload CSV</h1>
+      <%= form_with model: @csv_upload, url: csv_uploads_path, html: { multipart: true } do |form| %>
+        <div class="mb-3">
+          <%= form.file_field :csv_file, class: "form-control" %>
+        </div>
+        <div class="text-center">
+          <%= form.submit "Upload", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
